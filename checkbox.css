@@ -1,0 +1,270 @@
+/* ==============================================
+   MASSGEBUNG FOUNDATION — Checkboxes & Toggles
+   Tawny Furnace Design System
+   ============================================== */
+
+/* ==============================================
+   CHECKBOX GROUP
+   ============================================== */
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  cursor: pointer;
+  margin-bottom: var(--space-4);
+}
+
+.checkbox-group:last-child {
+  margin-bottom: 0;
+}
+
+/* ==============================================
+   CHECKBOX INPUT
+   ============================================== */
+
+.checkbox-input {
+  /* Hide native checkbox */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Custom Checkbox */
+.checkbox-input + .checkbox-label {
+  position: relative;
+  padding-left: var(--space-8);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-input + .checkbox-label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background: var(--bg-secondary);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+/* Checkmark */
+.checkbox-input + .checkbox-label::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg) scale(0);
+  opacity: 0;
+  transition: all var(--transition-fast);
+}
+
+/* ==============================================
+   CHECKBOX STATES
+   ============================================== */
+
+/* Hover */
+.checkbox-input:not(:disabled) + .checkbox-label:hover::before {
+  border-color: var(--border-strong);
+  background: var(--bg-tertiary);
+}
+
+/* Focus */
+.checkbox-input:focus-visible + .checkbox-label::before {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+/* Checked */
+.checkbox-input:checked + .checkbox-label::before {
+  background: linear-gradient(135deg, var(--color-tawny-500) 0%, var(--color-tawny-600) 100%);
+  border-color: var(--color-tawny-600);
+  box-shadow: 0 2px 4px rgba(240, 119, 11, 0.2);
+}
+
+.checkbox-input:checked + .checkbox-label::after {
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+}
+
+.checkbox-input:checked + .checkbox-label {
+  color: var(--text-primary);
+}
+
+/* Disabled */
+.checkbox-input:disabled + .checkbox-label {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checkbox-input:disabled + .checkbox-label::before {
+  background: var(--bg-primary);
+  border-color: var(--border-subtle);
+}
+
+/* ==============================================
+   CHECKBOX LABEL
+   ============================================== */
+
+.checkbox-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: var(--leading-relaxed);
+}
+
+.checkbox-label a {
+  color: var(--color-tawny-400);
+  text-decoration: underline;
+  font-weight: var(--font-medium);
+}
+
+.checkbox-label a:hover {
+  color: var(--color-tawny-300);
+}
+
+/* ==============================================
+   DSGVO CHECKBOX (Special Legal Checkbox)
+   ============================================== */
+
+.checkbox-dsgvo {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin: var(--space-6) 0;
+}
+
+.checkbox-dsgvo .checkbox-group {
+  margin-bottom: 0;
+}
+
+.checkbox-dsgvo .checkbox-label {
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  color: var(--text-tertiary);
+}
+
+.checkbox-dsgvo .checkbox-input:checked + .checkbox-label {
+  color: var(--text-secondary);
+}
+
+/* ==============================================
+   ERROR STATE
+   ============================================== */
+
+.checkbox-group--error .checkbox-input + .checkbox-label::before {
+  border-color: var(--color-error);
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.checkbox-group--error .checkbox-label {
+  color: var(--color-error);
+}
+
+/* ==============================================
+   TOGGLE SWITCH
+   ============================================== */
+
+.toggle {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border-default);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+/* Toggle Knob */
+.toggle::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background: var(--text-tertiary);
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Toggle Checked State */
+.toggle--checked {
+  background: linear-gradient(135deg, var(--color-tawny-500) 0%, var(--color-tawny-600) 100%);
+  border-color: var(--color-tawny-600);
+}
+
+.toggle--checked::before {
+  left: 26px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Toggle Hover */
+.toggle:hover {
+  border-color: var(--border-strong);
+}
+
+.toggle--checked:hover {
+  background: linear-gradient(135deg, var(--color-tawny-400) 0%, var(--color-tawny-500) 100%);
+  border-color: var(--color-tawny-500);
+}
+
+/* ==============================================
+   CHECKBOX SIZES
+   ============================================== */
+
+/* Small Checkbox */
+.checkbox-input.checkbox--sm + .checkbox-label::before {
+  width: 16px;
+  height: 16px;
+}
+
+.checkbox-input.checkbox--sm + .checkbox-label::after {
+  left: 6px;
+  top: 4px;
+  width: 4px;
+  height: 8px;
+}
+
+/* Large Checkbox */
+.checkbox-input.checkbox--lg + .checkbox-label::before {
+  width: 24px;
+  height: 24px;
+}
+
+.checkbox-input.checkbox--lg + .checkbox-label::after {
+  left: 9px;
+  top: 6px;
+  width: 7px;
+  height: 12px;
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+
+@media (max-width: 640px) {
+  .checkbox-input + .checkbox-label {
+    font-size: var(--text-xs);
+  }
+
+  .checkbox-dsgvo .checkbox-label {
+    font-size: 11px;
+  }
+}
