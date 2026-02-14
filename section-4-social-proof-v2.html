@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S4 v2: Social Proof + Founder</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-primary: #121212;
+      --bg-elevated: #1E1E1E;
+
+      --orange-primary: #CC5500;
+      --orange-border: rgba(204, 85, 0, 0.25);
+
+      --text-primary: rgba(255, 255, 255, 0.87);
+      --text-secondary: rgba(255, 255, 255, 0.60);
+      --text-tertiary: rgba(255, 255, 255, 0.38);
+
+      --border-subtle: rgba(255, 255, 255, 0.08);
+
+      --font-sans: 'DM Sans', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      --radius: 5px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-primary);
+      padding: 64px 24px;
+      color: var(--text-secondary);
+    }
+
+    h2 {
+       font-size: 26px;
+       color: var(--text-primary);
+       font-weight: 700;
+       margin-bottom: 32px;
+       text-align: center;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ==================== TILES ==================== */
+
+    .tile {
+      background-color: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius);
+    }
+
+    /* ==================== ZVO QUOTE ==================== */
+
+    .zvo-tile {
+      padding: 28px;
+      margin-bottom: 12px;
+    }
+
+    .zvo-quote {
+      font-family: var(--font-sans);
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin: 0 0 12px 0;
+    }
+
+    .zvo-source {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      letter-spacing: 0.03em;
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .zvo-divider {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 12px;
+    }
+
+    .zvo-positioning {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      color: var(--orange-primary);
+      font-weight: 600;
+    }
+
+    /* ==================== GRID ==================== */
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 2fr 3fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .bottom-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ==================== BRANCHENDATEN ==================== */
+
+    .data-tile {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .data-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--orange-primary);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .data-title {
+      font-family: var(--font-sans);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 20px 0;
+      line-height: 1.3;
+    }
+
+    .data-item {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .data-item:last-child {
+      border-bottom: none;
+    }
+
+    .data-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--orange-primary);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .data-stat {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+
+    .data-source {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.03em;
+    }
+
+    /* ==================== FOUNDER CREDIT ==================== */
+
+    .founder-tile {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .founder-bio {
+      font-family: var(--font-sans);
+      font-size: 15px;
+      line-height: 1.6;
+      margin: 0 0 8px 0;
+      color: var(--text-secondary);
+    }
+
+    .founder-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .founder-separator {
+      color: var(--text-tertiary);
+    }
+
+    .founder-tagline {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 0;
+      color: var(--text-tertiary);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h2>Sektion 4 v2: Social Proof + Founder</h2>
+
+    <!-- ZVO-Zitat (volle Breite) -->
+    <div class="tile zvo-tile">
+      <p class="zvo-quote">
+        „Standardsoftware ist zu allgemein, spezielle Branchensoftware kostspielig,
+        individuelle Programmierung durch Softwarehäuser meist unerschwinglich."
+      </p>
+
+      <span class="zvo-source">
+        — Zentralverband Oberflächentechnik (ZVO)
+      </span>
+
+      <div class="zvo-divider">
+        <span class="zvo-positioning">
+          MASSGEBUNG schließt genau diese Lücke.
+        </span>
+      </div>
+    </div>
+
+    <!-- 40:60 Grid -->
+    <div class="bottom-grid">
+
+      <!-- Branchendaten (40%) -->
+      <div class="tile data-tile">
+        <span class="data-label">Branchendaten</span>
+
+        <h3 class="data-title">Die Herausforderung</h3>
+
+        <div class="data-item">
+          <span class="data-bullet"></span>
+          <div>
+            <div class="data-stat">84% kämpfen mit Fachkräftemangel</div>
+            <span class="data-source">DIHK 2025</span>
+          </div>
+        </div>
+
+        <div class="data-item">
+          <span class="data-bullet"></span>
+          <div>
+            <div class="data-stat">63% berichten von Auftragsrückgang</div>
+            <span class="data-source">ZVO Jahresbericht</span>
+          </div>
+        </div>
+
+        <div class="data-item">
+          <span class="data-bullet"></span>
+          <div>
+            <div class="data-stat">46% kalkulieren mit Richtwerten</div>
+            <span class="data-source">WOMag</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Founder Credit (60%) -->
+      <div class="tile founder-tile">
+        <p class="founder-bio">
+          <span class="founder-name">Florian Derwein</span><span class="founder-separator"> · </span>Industriemechaniker & angehender Maschinenbautechniker<span class="founder-separator"> · </span>13 Jahre Fertigungserfahrung
+        </p>
+
+        <p class="founder-tagline">
+          Entwickelt mit Beschichtungsbetrieben.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
