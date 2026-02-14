@@ -1,0 +1,128 @@
+/**
+ * FounderCredit Styles — Design System "Tawny Furnace"
+ *
+ * Signatur-Stil: Kompakt, 2 Zeilen, keine verschachtelte Hierarchie
+ * KEIN Karten-Container, KEIN Foto-Platzhalter wenn kein echtes Foto
+ */
+
+/* ==================== CSS CUSTOM PROPERTIES ==================== */
+
+:root {
+  /* Colors */
+  --fc-bg-primary: #121212;
+  --fc-bg-elevated: #1E1E1E;
+  --fc-bg-surface: #252525;
+
+  --fc-text-primary: rgba(255, 255, 255, 0.87);
+  --fc-text-secondary: rgba(255, 255, 255, 0.60);
+  --fc-text-tertiary: rgba(255, 255, 255, 0.38);
+
+  --fc-border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Typography */
+  --fc-font-family: 'DM Sans', sans-serif;
+
+  /* Spacing */
+  --fc-spacing-identity-to-cocreation: 8px;
+  --fc-spacing-photo-to-text: 12px;
+  --fc-spacing-border-top: 24px;
+
+  /* Sizing */
+  --fc-photo-size: 40px;
+  --fc-border-radius: 5px;
+}
+
+/* ==================== COMPONENT STYLES ==================== */
+
+.founderCredit {
+  font-family: var(--fc-font-family);
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--fc-spacing-photo-to-text);
+}
+
+/* ==================== PHOTO (OPTIONAL) ==================== */
+
+.photo {
+  width: var(--fc-photo-size);
+  height: var(--fc-photo-size);
+  border-radius: var(--fc-border-radius);
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==================== CONTENT AREA ==================== */
+
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fc-spacing-identity-to-cocreation);
+}
+
+/* ==================== IDENTITY LINE (Zeile 1) ==================== */
+
+.identity {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--fc-text-secondary);
+  font-weight: 400;
+}
+
+.name {
+  color: var(--fc-text-primary);
+  font-weight: 600;
+}
+
+.separator {
+  color: var(--fc-text-tertiary);
+  font-weight: 400;
+}
+
+.credentials {
+  color: var(--fc-text-secondary);
+  font-weight: 400;
+}
+
+/* ==================== CO-CREATION LINE (Zeile 2) ==================== */
+
+.coCreation {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--fc-text-tertiary);
+  font-weight: 400;
+}
+
+/* ==================== OPTIONAL: BORDER-TOP VARIANT ==================== */
+
+/**
+ * Wenn die Komponente als Abtrennung verwendet werden soll,
+ * kann diese Klasse zusätzlich über die className-Prop übergeben werden:
+ *
+ * <FounderCredit className={styles.withBorderTop} />
+ */
+.withBorderTop {
+  border-top: 1px solid var(--fc-border-subtle);
+  padding-top: var(--fc-spacing-border-top);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+/**
+ * Keine spezifischen Breakpoints nötig — die inline-Zeile umbricht natürlich.
+ * Bei sehr schmalen Viewports (<360px) könnte das Foto optional ausgeblendet werden:
+ */
+@media (max-width: 360px) {
+  .photo {
+    /* Optional: Foto auf sehr kleinen Screens ausblenden */
+    /* display: none; */
+  }
+}
