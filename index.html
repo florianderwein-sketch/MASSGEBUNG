@@ -81,6 +81,71 @@
       margin-top: var(--space-md);
       line-height: 1.5;
     }
+
+    /* ==================== FOUNDER CREDIT ==================== */
+
+    .founder-credit {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .founder-credit__container {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .founder-credit__photo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius);
+      background-color: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--text-tertiary);
+      font-size: 24px;
+      font-weight: 600;
+      font-family: var(--font-sans);
+    }
+
+    .founder-credit__info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .founder-credit__name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .founder-credit__title {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .founder-credit__co-creation {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Responsive: Vertical layout < 480px */
+    @media (max-width: 480px) {
+      .founder-credit__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -378,6 +443,35 @@
             Sie können sich jederzeit wieder abmelden.
           </p>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: FOUNDER CREDIT ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">FounderCredit</h2>
+      <p class="section-subtitle">Founder profile card with photo placeholder and co-creation signal</p>
+
+      <div class="component-demo" style="max-width: 600px; margin: 0 auto;">
+        <div class="demo-title">Standard FounderCredit</div>
+
+        <div class="founder-credit">
+          <div class="founder-credit__container">
+            <div class="founder-credit__photo" aria-label="Florian Derwein">
+              FD
+            </div>
+            <div class="founder-credit__info">
+              <div class="founder-credit__name">Florian Derwein</div>
+              <div class="founder-credit__title">
+                Industriemechaniker & angehender Maschinenbautechniker mit 13 Jahren Fertigungserfahrung.
+              </div>
+            </div>
+          </div>
+          <div class="founder-credit__co-creation">
+            Entwickelt mit Beschichtungsbetrieben.
+          </div>
+        </div>
       </div>
     </div>
   </section>
