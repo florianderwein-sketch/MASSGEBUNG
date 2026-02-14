@@ -269,6 +269,71 @@
       color: var(--text-tertiary);
       font-size: 12px;
     }
+
+    /* ==================== FOUNDER CREDIT ==================== */
+
+    .founder-credit {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .founder-credit__container {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .founder-credit__photo {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius);
+      background-color: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--text-tertiary);
+      font-size: 24px;
+      font-weight: 600;
+      font-family: var(--font-sans);
+    }
+
+    .founder-credit__info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .founder-credit__name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .founder-credit__title {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .founder-credit__co-creation {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--text-tertiary);
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Responsive: Vertical layout < 480px */
+    @media (max-width: 480px) {
+      .founder-credit__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -329,37 +394,27 @@
           </ul>
         </div>
 
-        <!-- Kachel 3: Rechenweg-Transparenz (1×1) -->
+        <!-- Kachel 3: Founder Profile (1×1) -->
         <div class="tile">
           <div class="tile__header">
-            <span class="tile__label">Transparenz</span>
-            <h3 class="tile__title">Nachvollziehbare Kalkulation</h3>
+            <span class="tile__label">Gründer</span>
+            <h3 class="tile__title">Aus der Praxis</h3>
           </div>
 
-          <div class="calc-flow">
-            <div class="calc-step">
-              <div class="calc-step__label">Bauteil-Analyse</div>
-              <div class="calc-step__value">127,5 cm²</div>
+          <div class="founder-credit">
+            <div class="founder-credit__container">
+              <div class="founder-credit__photo" aria-label="Florian Derwein">
+                FD
+              </div>
+              <div class="founder-credit__info">
+                <div class="founder-credit__name">Florian Derwein</div>
+                <div class="founder-credit__title">
+                  Industriemechaniker & angehender Maschinenbautechniker mit 13 Jahren Fertigungserfahrung.
+                </div>
+              </div>
             </div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-step">
-              <div class="calc-step__label">Material</div>
-              <div class="calc-step__value">12,40 €</div>
-            </div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-step">
-              <div class="calc-step__label">Rüstkosten</div>
-              <div class="calc-step__value">24,50 €</div>
-            </div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-step">
-              <div class="calc-step__label">Arbeitszeit</div>
-              <div class="calc-step__value">18,20 €</div>
-            </div>
-            <div class="calc-arrow">↓</div>
-            <div class="calc-step calc-step--total">
-              <div class="calc-step__label">Gesamt (netto)</div>
-              <div class="calc-step__value">55,10 €</div>
+            <div class="founder-credit__co-creation">
+              Entwickelt mit Beschichtungsbetrieben.
             </div>
           </div>
         </div>
