@@ -1,0 +1,298 @@
+/* ================================================
+   MASSGEBUNG Foundation Checkboxes & Toggles
+   Tawny Furnace Design System
+   ================================================ */
+
+/* ===== Checkbox Container ===== */
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox:has(.checkbox-input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Hidden Native Input ===== */
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* ===== Custom Checkbox Box ===== */
+.checkbox-box {
+  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-secondary);
+  transition: all var(--transition-fast);
+}
+
+.checkbox:hover .checkbox-box {
+  border-color: var(--text-secondary);
+}
+
+.checkbox-input:focus-visible + .checkbox-box {
+  box-shadow: var(--shadow-focus);
+  border-color: var(--orange-primary);
+}
+
+/* ===== Checked State ===== */
+.checkbox-input:checked + .checkbox-box {
+  background-color: var(--orange-primary);
+  border-color: var(--orange-primary);
+}
+
+.checkbox-input:checked + .checkbox-box::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--text-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ===== Checkbox Label ===== */
+.checkbox-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.4;
+  padding-top: 1px;
+}
+
+.checkbox-label a {
+  color: var(--orange-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.checkbox-label a:hover {
+  border-bottom-color: var(--orange-primary);
+}
+
+/* ===== DSGVO Checkbox Variant ===== */
+.checkbox-dsgvo .checkbox-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.checkbox-dsgvo .checkbox-label a {
+  color: var(--orange-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* ===== Error State ===== */
+.checkbox--error .checkbox-box {
+  border-color: var(--error);
+  background-color: var(--error-bg);
+}
+
+.checkbox--error .checkbox-label {
+  color: var(--error);
+}
+
+.checkbox--error .checkbox-input:checked + .checkbox-box {
+  background-color: var(--error);
+  border-color: var(--error);
+}
+
+/* ===== Disabled State ===== */
+.checkbox-input:disabled + .checkbox-box {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Checkbox Group ===== */
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.checkbox-group-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+/* ===== Toggle Switch ===== */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle:has(.toggle-input:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== Hidden Toggle Input ===== */
+.toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* ===== Toggle Switch Track ===== */
+.toggle-switch {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  background-color: var(--bg-elevated);
+  border: 2px solid var(--border-default);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.toggle:hover .toggle-switch {
+  border-color: var(--text-secondary);
+}
+
+.toggle-input:focus-visible + .toggle-switch {
+  box-shadow: var(--shadow-focus);
+  border-color: var(--orange-primary);
+}
+
+/* ===== Toggle Switch Handle ===== */
+.toggle-switch::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  transition: all var(--transition-fast);
+}
+
+/* ===== Toggle Checked State ===== */
+.toggle-input:checked + .toggle-switch {
+  background-color: var(--orange-primary);
+  border-color: var(--orange-primary);
+}
+
+.toggle-input:checked + .toggle-switch::before {
+  transform: translateX(18px);
+}
+
+/* ===== Toggle Label ===== */
+.toggle-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+/* ===== Toggle with Text on Switch ===== */
+.toggle-switch--labeled {
+  width: 60px;
+  padding: 0 var(--space-xs);
+}
+
+.toggle-switch--labeled::after {
+  content: 'OFF';
+  position: absolute;
+  right: var(--space-xs);
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  color: var(--text-tertiary);
+  transition: opacity var(--transition-fast);
+}
+
+.toggle-input:checked + .toggle-switch--labeled::after {
+  content: 'ON';
+  left: var(--space-xs);
+  right: auto;
+  color: var(--text-primary);
+}
+
+/* ===== Radio Button (Similar to Checkbox) ===== */
+.radio {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-box {
+  position: relative;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--border-default);
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  transition: all var(--transition-fast);
+}
+
+.radio:hover .radio-box {
+  border-color: var(--text-secondary);
+}
+
+.radio-input:focus-visible + .radio-box {
+  box-shadow: var(--shadow-focus);
+  border-color: var(--orange-primary);
+}
+
+.radio-input:checked + .radio-box {
+  border-color: var(--orange-primary);
+}
+
+.radio-input:checked + .radio-box::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--orange-primary);
+}
+
+.radio-label {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  line-height: 1.4;
+  padding-top: 1px;
+}
+
+/* ===== Radio Group ===== */
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.radio-group-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}

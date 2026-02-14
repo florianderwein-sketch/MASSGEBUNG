@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MASSGEBUNG Foundation — Tawny Furnace Design System</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Foundation CSS -->
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="buttons.css">
+  <link rel="stylesheet" href="inputs.css">
+  <link rel="stylesheet" href="checkbox.css">
+
+  <style>
+    /* Additional showcase-specific styles */
+    .showcase-header {
+      text-align: center;
+      padding: var(--space-2xl) 0;
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .showcase-title {
+      font-size: 48px;
+      font-weight: var(--font-weight-bold);
+      margin-bottom: var(--space-sm);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--orange-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .showcase-subtitle {
+      font-size: var(--font-size-lg);
+      color: var(--text-secondary);
+      font-weight: var(--font-weight-medium);
+    }
+
+    .component-demo {
+      padding: var(--space-xl);
+      background-color: var(--bg-secondary);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--space-lg);
+    }
+
+    .demo-title {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-semibold);
+      margin-bottom: var(--space-md);
+      color: var(--text-primary);
+    }
+
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+    }
+
+    .demo-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .demo-label {
+      font-size: var(--font-size-xs);
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: var(--font-weight-semibold);
+    }
+
+    .security-notice {
+      font-size: var(--font-size-xs);
+      color: var(--text-tertiary);
+      text-align: center;
+      margin-top: var(--space-md);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="showcase-header">
+    <div class="container">
+      <h1 class="showcase-title">MASSGEBUNG Foundation</h1>
+      <p class="showcase-subtitle">Tawny Furnace Design System — All Components</p>
+    </div>
+  </header>
+
+  <!-- ===== SECTION 1: BUTTONS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Buttons</h2>
+      <p class="section-subtitle">All button variants, sizes, and states</p>
+
+      <!-- Button Sizes -->
+      <div class="component-demo">
+        <div class="demo-title">Primary CTA — All Sizes</div>
+        <div class="demo-row">
+          <div>
+            <div class="demo-label">Small (36px)</div>
+            <button class="btn btn--primary btn--sm">Button SM</button>
+          </div>
+          <div>
+            <div class="demo-label">Medium (44px)</div>
+            <button class="btn btn--primary btn--md">Button MD</button>
+          </div>
+          <div>
+            <div class="demo-label">Large (52px)</div>
+            <button class="btn btn--primary btn--lg">Button LG</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button Variants -->
+      <div class="component-demo">
+        <div class="demo-title">All Variants (Medium Size)</div>
+        <div class="demo-row">
+          <button class="btn btn--primary btn--md">Primary</button>
+          <button class="btn btn--secondary btn--md">Secondary</button>
+          <button class="btn btn--ghost btn--md">Ghost</button>
+          <button class="btn btn--danger btn--md">Danger</button>
+        </div>
+      </div>
+
+      <!-- Button States -->
+      <div class="component-demo">
+        <div class="demo-title">States</div>
+        <div class="demo-row">
+          <div>
+            <div class="demo-label">Default</div>
+            <button class="btn btn--primary btn--md">Normal</button>
+          </div>
+          <div>
+            <div class="demo-label">Loading</div>
+            <button class="btn btn--primary btn--md btn--loading">Loading</button>
+          </div>
+          <div>
+            <div class="demo-label">Disabled</div>
+            <button class="btn btn--primary btn--md" disabled>Disabled</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button Groups -->
+      <div class="component-demo">
+        <div class="demo-title">Button Group</div>
+        <div class="btn-group">
+          <button class="btn btn--secondary btn--md">Left</button>
+          <button class="btn btn--secondary btn--md">Center</button>
+          <button class="btn btn--secondary btn--md">Right</button>
+        </div>
+      </div>
+
+      <!-- Icon Buttons -->
+      <div class="component-demo">
+        <div class="demo-title">Icon Buttons</div>
+        <div class="demo-row">
+          <button class="btn btn--primary btn--icon btn--sm" aria-label="Small icon">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+            </svg>
+          </button>
+          <button class="btn btn--primary btn--icon btn--md" aria-label="Medium icon">
+            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+            </svg>
+          </button>
+          <button class="btn btn--primary btn--icon btn--lg" aria-label="Large icon">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Full Width Button -->
+      <div class="component-demo">
+        <div class="demo-title">Full Width</div>
+        <button class="btn btn--primary btn--lg btn--full">Full Width Button</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2: INPUT FIELDS ===== -->
+  <section class="section section--elevated">
+    <div class="container">
+      <h2 class="section-title">Input Fields</h2>
+      <p class="section-subtitle">Text inputs, email fields, and textareas</p>
+
+      <!-- Standard Input -->
+      <div class="component-demo">
+        <div class="demo-title">Standard Text Input</div>
+        <div class="input-group">
+          <label class="input-label input-label--required" for="input-name">Full Name</label>
+          <input type="text" id="input-name" class="input-field" placeholder="Enter your full name">
+          <span class="input-hint">This is a helpful hint text</span>
+        </div>
+      </div>
+
+      <!-- Email Input -->
+      <div class="component-demo">
+        <div class="demo-title">Email Input (48px height)</div>
+        <div class="input-group">
+          <label class="input-label input-label--required" for="input-email-demo">Email Address</label>
+          <input type="email" id="input-email-demo" class="input-field input-email" placeholder="you@example.com">
+        </div>
+      </div>
+
+      <!-- Input with Icon -->
+      <div class="component-demo">
+        <div class="demo-title">Input with Search Icon</div>
+        <div class="input-wrapper input-wrapper--icon-left">
+          <span class="input-icon input-icon--left">
+            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+          </span>
+          <input type="search" class="input-field input-search" placeholder="Search...">
+        </div>
+      </div>
+
+      <!-- Error State -->
+      <div class="component-demo">
+        <div class="demo-title">Error State</div>
+        <div class="input-group input-group--error">
+          <label class="input-label" for="input-error">Username</label>
+          <input type="text" id="input-error" class="input-field" value="invalid username">
+          <span class="input-hint">Username must be at least 3 characters</span>
+        </div>
+      </div>
+
+      <!-- Success State -->
+      <div class="component-demo">
+        <div class="demo-title">Success State</div>
+        <div class="input-group input-group--success">
+          <label class="input-label" for="input-success">Email Verified</label>
+          <input type="email" id="input-success" class="input-field" value="user@example.com">
+          <span class="input-hint">Email address verified successfully</span>
+        </div>
+      </div>
+
+      <!-- Textarea -->
+      <div class="component-demo">
+        <div class="demo-title">Textarea</div>
+        <div class="input-group">
+          <label class="input-label" for="input-message">Message</label>
+          <textarea id="input-message" class="input-field input-textarea" placeholder="Enter your message here..."></textarea>
+        </div>
+      </div>
+
+      <!-- Disabled Input -->
+      <div class="component-demo">
+        <div class="demo-title">Disabled State</div>
+        <div class="input-group">
+          <label class="input-label" for="input-disabled">Disabled Field</label>
+          <input type="text" id="input-disabled" class="input-field" value="This field is disabled" disabled>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: CHECKBOXES & TOGGLES ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Checkboxes & Toggles</h2>
+      <p class="section-subtitle">Custom checkboxes, DSGVO variant, and toggle switches</p>
+
+      <!-- Standard Checkbox -->
+      <div class="component-demo">
+        <div class="demo-title">Standard Checkbox</div>
+        <div class="demo-row">
+          <label class="checkbox">
+            <input type="checkbox" class="checkbox-input">
+            <span class="checkbox-box"></span>
+            <span class="checkbox-label">Unchecked state</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" class="checkbox-input" checked>
+            <span class="checkbox-box"></span>
+            <span class="checkbox-label">Checked state</span>
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" class="checkbox-input" disabled>
+            <span class="checkbox-box"></span>
+            <span class="checkbox-label">Disabled state</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- DSGVO Checkbox -->
+      <div class="component-demo">
+        <div class="demo-title">DSGVO Checkbox with Links</div>
+        <label class="checkbox checkbox-dsgvo">
+          <input type="checkbox" class="checkbox-input" id="dsgvo-demo">
+          <span class="checkbox-box"></span>
+          <span class="checkbox-label">
+            Ich akzeptiere die <a href="#agb">AGB</a> und <a href="#datenschutz">Datenschutzbestimmungen</a> und möchte über Neuigkeiten informiert werden.
+          </span>
+        </label>
+      </div>
+
+      <!-- Error State Checkbox -->
+      <div class="component-demo">
+        <div class="demo-title">Error State</div>
+        <label class="checkbox checkbox--error">
+          <input type="checkbox" class="checkbox-input">
+          <span class="checkbox-box"></span>
+          <span class="checkbox-label">This checkbox is required</span>
+        </label>
+      </div>
+
+      <!-- Toggle Switch -->
+      <div class="component-demo">
+        <div class="demo-title">Toggle Switch</div>
+        <div class="demo-row">
+          <label class="toggle">
+            <input type="checkbox" class="toggle-input">
+            <span class="toggle-switch"></span>
+            <span class="toggle-label">Toggle OFF</span>
+          </label>
+          <label class="toggle">
+            <input type="checkbox" class="toggle-input" checked>
+            <span class="toggle-switch"></span>
+            <span class="toggle-label">Toggle ON</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: COMPLETE FORM EXAMPLE ===== -->
+  <section class="section section--elevated">
+    <div class="container">
+      <h2 class="section-title">Complete Form Example</h2>
+      <p class="section-subtitle">Newsletter signup with email, DSGVO checkbox, and submit button</p>
+
+      <div class="component-demo" style="max-width: 600px; margin: 0 auto;">
+        <form>
+          <!-- Email Input -->
+          <div class="input-group" style="margin-bottom: var(--space-lg);">
+            <label class="input-label input-label--required" for="newsletter-email">Email Address</label>
+            <input
+              type="email"
+              id="newsletter-email"
+              class="input-field input-email"
+              placeholder="you@example.com"
+              required
+            >
+            <span class="input-hint">We'll never share your email with anyone else</span>
+          </div>
+
+          <!-- DSGVO Checkbox -->
+          <div style="margin-bottom: var(--space-xl);">
+            <label class="checkbox checkbox-dsgvo">
+              <input type="checkbox" class="checkbox-input" id="newsletter-dsgvo" required>
+              <span class="checkbox-box"></span>
+              <span class="checkbox-label">
+                Ich akzeptiere die <a href="#agb">AGB</a> und <a href="#datenschutz">Datenschutzbestimmungen</a> und möchte über Neuigkeiten per E-Mail informiert werden.
+              </span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn--primary btn--lg btn--full">
+            Newsletter abonnieren
+          </button>
+
+          <!-- Security Notice -->
+          <p class="security-notice">
+            🔒 Ihre Daten werden verschlüsselt übertragen und gemäß DSGVO verarbeitet.<br>
+            Sie können sich jederzeit wieder abmelden.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="section" style="text-align: center; padding: var(--space-xl) 0; border-top: 1px solid var(--border-default);">
+    <div class="container">
+      <p style="color: var(--text-tertiary); font-size: var(--font-size-sm);">
+        MASSGEBUNG Foundation Components — Tawny Furnace Design System<br>
+        Built with ❤️ using DM Sans & JetBrains Mono
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
